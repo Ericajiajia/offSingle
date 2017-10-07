@@ -1,0 +1,27 @@
+{
+  "name": "offsingle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ericajiajia/offSingle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ericajiajia/offSingle/issues"
+  },
+  "homepage": "https://github.com/Ericajiajia/offSingle#readme",
+  "dependencies": {
+    "express": "^4.16.1",
+    "font-spider": "^1.3.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-font-spider": "^0.3.6"
+  }
+}
