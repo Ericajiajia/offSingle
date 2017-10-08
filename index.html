@@ -30,7 +30,7 @@
 </head>
 <body>
 <!-- 首页 -->
-<div class="first-page-container" style="display: none;">
+<div class="first-page-container">
     <div class="first-page-inner">
         <!-- 第一页的logo -->
         <div class="first-page-logo animated bounceInDown">
@@ -50,23 +50,21 @@
 </div>
 
 
-
-<style>
-
-</style>
 <!-- 脱单预测 -->           <!--     .....title change -->
 <div class="forecast-page-container" style="display: none;">
-    <div class="forecast-page-back" datta-index="0">
+    <!-- 返回标签 -->
+    <div class="forecast-page-back" data-index="0">
         <
     </div>
-    <div class="forecast-page-form">
+    <!-- 填写表单 -->
+    <div class="forecast-page-form animated bounceInDown">
         <div class="form-dog">
             <img src="./static/picture/forecast_dog.png" alt="forecast_dog" class="form-dog-img">
         </div>
         <div class="form-main">
             <div class="form-name">
                 <label class="name-content" for="name">姓名:</label>
-                <input type="text" class="name-input" id="name" spellcheck="none" placeholder="请输入你的姓名">
+                <input type="text" class="name-input" id="name" spellcheck="false" placeholder="请输入你的姓名">
             </div>
             <div class="form-sex">
                 <label class="sex-content">性别:</label>
@@ -77,7 +75,7 @@
             </div>
             <div class="form-age">
                 <label class="age-content" for="age">年龄:</label>
-                <input type="text" class="age-input" id="age" spellcheck="none" placeholder="请输入你的年龄">
+                <input type="text" class="age-input" id="age" spellcheck="false" placeholder="请输入你的年龄">
             </div>
             <div class="form-button">确认</div>
         </div>
@@ -86,10 +84,162 @@
 
 
 
+<!-- 结果展示页 -->
+<div class="result-page-container" style="display: none;">
+    <div class="result-page-back" data-index="0">
+        <
+    </div>
+    <div class="result-page-inner">
+        <!-- 结果生成图片 -->
+        <div class="result-container">
+            <div class="result-title">月老灵签</div>
+            <div class="result-content">
+                <div class="result-name">喵喵喵</div>
+                <div class="result-year-container">
+                    很有可能在
+                    <span class="result-year">2017</span>
+                    年
+                </div>
+                <div class="result-place-container">
+                    的
+                    <span class="result-place">公选课</span>
+                </div>
+                <div class="result-connect">遇见一位</div>
+                <div class="result-describe-container">
+                    <span class="result-describe">穿着棕色风衣</span>
+                    的
+                </div>
+                <div class="result-lover">王子</div>
+                <div class="result-save">长按保存图片</div>
+            </div>
+        </div>
+        <!-- 分享按钮 -->
+        <div class="result-share-buttons">
+            <div class="share-button1">
+                <p class="share-qq">分享到我的QQ空间</p>
+                <img src="./static/picture/share_QQ.png" alt="QQ_share">
+            </div>
+            <div class="share-button2">
+                <p class="share-wechat">分享到我的朋友圈</p>
+                <img src="./static/picture/share_wechat.png" alt="Wechat_share">
+            </div>
+        </div>
+    </div>
+</div>
 
+
+<!-- 告白密函页 -->
+<div class="letter-page-container" style="display: none;">
+    <div class="letter-page-back" data-index="0">
+        <
+    </div>
+    <!-- 告白密函 -->
+    <div class="letter-page-inner">
+        <!-- 填写邮件处 -->
+        <div class="letter-page-form">
+            <!-- 爱心装饰 -->
+            <div class="letter-page-hearts">
+                <div class="left-heart"></div>
+                <div class="right-heart"></div>
+            </div>
+            <!-- 输入邮箱 -->
+            <div class="letter-email">
+                <label for="email">邮箱 :</label>
+                <input type="text" class="letter-email-input" id="email" spellcheck="false" placeholder="输入他/她的邮箱">
+            </div>
+            <!-- 输入信件内容 -->
+            <textarea name="emailWrite" class="letter-write" placeholder="请输入你想对他/她说的话"></textarea>
+            <!-- 发送按钮 -->
+            <div class="letter-send-button">发 送</div>
+        </div>
+        <div class="letter-page-arrow animated fadeInLeftQuick"></div>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="letter-alert-container">
+        <!-- 确认框 -->
+        <div class="letter-alert">
+            <!-- 是否离开 -->
+            <div class="leave-alert" style="display: none;">
+                <div class="leave-message">返回后，所编辑内容不被保存</div>
+                <div class="leave-buttons">
+                    <div class="leave-sure">确认</div>
+                    <div class="leave-cancel">取消</div>
+                </div>
+            </div>
+            <!-- 是否确认消息 -->
+            <div class="confirm-alert">
+                <!-- 邮箱输入错误，请检查输入 -->
+                <div class="confirm-message">你的告白密函投递成功！</div>
+                <div class="confirm-buttons">
+                    <div class="confirm-sure">确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./static/js/jquery-3.2.1.js"></script>
 <script src="./static/js/index.js"></script>
 <script>
-var 
+var pageState = [$('.first-page-container')[0], $('.forecast-page-container')[0], $('.result-page-container')[0], $('.letter-page-container')[0]]
+var backIcon = [$('.forecast-page-back')[0], $('.result-page-back')[0], $('.letter-page-back')[0])
+var forecastButton = $('.forecast-button')[0]
+var letterButton = $('.letter-button')[0]
+var sexInput = $('.sex-input')[0]
+var sexSelect1 = $('.sex-select1')[0]
+var sexSelect2 = $('.sex-select2')[0]
+var sex = '男'
+var name, age
+var formButton = $('.form-button')[0]
+
+
+// 页面展示函数
+var showPage = function (index) {
+    for (let i = 0; i < pageState.length; i++) {
+        pageState[i].style.display = 'none'
+    }
+    pageState[index].style.display = 'block'
+}
+// 性别选择函数
+sexSelect2.style.display = 'none'
+sexSelect1.addEventListener('click', function (event) {
+    event.stopPropagation()
+    if (sexSelect2.style.display === 'none') {
+        sexSelect2.style.display = 'block'
+    } else {
+        sexSelect2.style.display = 'none'
+    }
+    sex = sexSelect1.innerHTML
+    console.log(sex)
+})
+sexSelect2.addEventListener('click', function (event) {
+    event.stopPropagation()
+    sexSelect2.style.display = 'none'
+    let sextemp = sexSelect2.innerHTML
+    sexSelect2.innerHTML = sexSelect1.innerHTML
+    sexSelect1.innerHTML = sextemp
+    sex = sexSelect1.innerHTML
+    console.log(sex)
+})
+pageState[1].addEventListener('click', function () {
+    sexSelect2.style.display = 'none'
+    sex = sexSelect1.innerHTML
+    console.log(sex)
+})
+
+// 信息填写确认
+formButton.addEventListener('click', function () {
+    name = $('.name-input')[0].value
+    age = $('.age-input')[0].value
+    console.log({name: name, sex: sex, age: age})
+    // $.ajax({})
+    showPage(2)
+})
+
+
+forecastButton.addEventListener('click', function () {
+    showPage(1)
+})
 </script>
 </body>
 </html>

@@ -42,14 +42,14 @@ body, html {
     background: #282828;
 }
 /*首页样式*/
-.first-page-container, .forecast-page-container {
+.first-page-container, .forecast-page-container, .result-page-container, .letter-page-container {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
 }
 .first-page-inner {
-    width: 80%;
+    width: 3rem;
     height: 90%;
     margin: 0 auto;
     padding: .4rem .1rem;
@@ -118,7 +118,7 @@ body, html {
 
 /*脱单预测*/
 /*返回标签*/
-.forecast-page-back {
+.forecast-page-back, .result-page-back, .letter-page-back {
     width: auto;
     height: auto;
     display: inline-block;
@@ -130,7 +130,7 @@ body, html {
 .forecast-page-form {
     width: 2.9rem;
     height: auto;
-    margin: .5rem auto 0;
+    margin: .2rem auto 0;
     padding: 0;
 }
 /*狗头*/
@@ -191,9 +191,9 @@ body, html {
 }
 .sex-select1, .sex-select2 {
     width: 1.5rem;
-    height: .3rem;
+    height: .31rem;
     margin: 0 0 0 -.08rem;
-    line-height: .3rem;
+    line-height: .31rem;
     border: .014rem solid #000000;
     border-radius: .03rem;
     font-size: .14rem;
@@ -201,9 +201,6 @@ body, html {
     padding-left: .05rem;
     padding-right: .05rem;
 }
-/*.sex-select1:hover, .sex-select2:hover {
-    background: #d3f2f7;
-}*/
 .form-button {
     width: 2rem;
     height: .5rem;
@@ -214,4 +211,310 @@ body, html {
     font-family: 'zaozi';
     font-size: .3rem;
     text-align: center;
+}
+
+
+
+/*结果展示页*/
+.result-page-inner {
+    width: 3.1rem;
+    height: auto;
+    margin: 0 auto;
+    padding: .1rem 0;
+}
+/*结果展示部分*/
+.result-container {
+    width: 100%;
+    height: 4rem;
+    padding: .09rem .15rem;
+    margin: 0;
+    box-sizing: border-box;
+    border: .03rem solid #000000;
+    border-radius: .04rem;
+    background: #ffffff;
+    background-image: url(../picture/result_background_div.png), url(../picture/forecast_background_circle.png);
+    background-position: center center, center center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 2.69rem 3.65rem, 2.09rem auto;
+}
+.result-title {
+    height: .27rem;
+    line-height: .27rem;
+    font-family: 'tengxiang';
+    font-size: .22rem;
+    margin: .12rem auto;
+    padding: 0;
+    color: #dd4c4c;
+    text-align: center;
+}
+/*分享内容*/
+.result-content {
+    width: 100%;
+    height: 3.24rem;
+    margin: 0 auto;
+}
+.result-name, .result-year-container, .result-place-container, .result-connect, .result-describe-container, .result-lover {
+    display: inline-block;
+    position: relative;
+    font-size: .21rem;
+    font-weight: bolder;
+    color: #000000;
+}
+.result-name {
+    top: .1rem;
+    left: .45rem;
+    font-size: .37rem;
+    color: #dd4c4a;
+}
+.result-year-container {
+    top: .15rem;
+    left: .16rem;
+    font-family: 'zaozi';
+}
+.result-year {
+    font-size: .43rem;
+    color: #81d8d8;
+}
+.result-place-container {
+    top: .24rem;
+    left: .4rem;
+    font-family: 'zaozi';
+}
+.result-place {
+    font-size: .35rem;
+    color: #f6e376;
+}
+.result-connect {
+    top: .65rem;
+    left: .2rem;
+    font-family: 'zaozi';
+}
+.result-describe-container {
+    top: .7rem;
+    left: .4rem;
+}
+.result-describe {
+    font-size: .31rem;
+    color: #dd4c4a;
+}
+.result-lover {
+    top: .7rem;
+    left: .8rem;
+    font-size: .5rem;
+    color: #81d8d8;
+}
+.result-save {
+    position: relative;
+    bottom: -.88rem;
+    margin: 0;
+    font-size: .14rem;
+    color: #000000;
+    font-family: 'zaozi';
+    text-align: center;
+}
+/*分享按钮*/
+.result-share-buttons {
+    width: 3.1rem;
+    height: auto;
+    margin: .02rem auto;
+    padding: 0;
+    background: #ffffff;
+    box-sizing: border-box;
+    border: .03rem solid #000000;
+    border-radius: .03rem;
+}
+.share-button1, .share-button2 {
+    width: 2.74rem;
+    height: .45rem;
+    line-height: .45rem;
+    padding-left: .38rem;
+    padding-right: .18rem;
+    margin: .12rem auto .12rem;
+    box-sizing: border-box;
+    border: .014rem solid #000000;
+    border-radius: .03rem;
+    font-size: .18rem;
+    font-family: 'pingfang';
+    display: flex;
+    justify-content: space-between;
+}
+.share-button1 {
+    margin-bottom: .2rem;
+}
+.share-button1 p, .share-button2 p {
+    height: .45rem;
+    line-height: .45rem;
+    margin: 0;
+}
+.share-button1 img, .share-button2 img {
+    width: .36rem;
+    height: .36rem;
+    margin-top: .04rem;
+}
+
+
+
+/*告白密函 */
+.letter-page-inner {
+    width: 3.06rem;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+/*填写邮件处*/
+.letter-page-form {
+    width: 100%;
+    height: 4.78rem;
+    margin: .3rem auto;
+    padding: .29rem .14rem;
+    box-sizing: border-box; 
+    border: .03rem solid #000000;
+    border-radius: .04rem;
+    background: #ffffff;
+    box-shadow: 0 0 .02rem .01rem inset;
+}
+/*爱心装饰*/
+.letter-page-hearts {
+    width: 3.5rem;
+    height: .5rem;
+    position: relative;
+    margin: -.5rem -.44rem;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.left-heart, .right-heart {
+    height: .5rem;
+    width: .4rem;
+    background-size: .4rem .5rem;
+    background-repeat: no-repeat;
+}
+.left-heart {
+    background-image: url(../picture/letter_left_arrow.png);
+}
+.right-heart {
+    background-image: url(../picture/letter_right-arrow.png);
+}
+.letter-page-arrow {
+    width: 100%;
+    height: .4rem;
+    margin: .16rem auto;
+    background-image: url(../picture/love_arrow.png);
+    background-size: 3.02rem auto;
+    background-repeat: no-repeat;
+}
+/*输入邮箱*/
+.letter-email {
+    width: 2.74rem;
+    height: .27rem;
+    margin: .6rem auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+.letter-email label {
+    font-size: .17rem;
+    color: #050505;
+    font-family: 'zaozi';
+}
+.letter-email-input {
+    width: 2.2rem;
+    height: 100%;
+    outline: none;
+    font-size: .14rem;
+    padding: 0 .05rem;
+    box-sizing: border-box;
+    border: .01rem solid #000000;
+    color: #050505;
+}
+.letter-write {
+    width: 2.73rem;
+    height: 3.33rem;
+    margin: .16rem auto .14rem;
+    padding: .05rem;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+    font-size: .14rem;
+    border: .01rem solid #000000;
+}
+.letter-send-button {
+    display: inline-block;
+    width: .9rem;
+    height: .36rem;
+    float: right;
+    line-height: .36rem;
+    font-size: .22rem;
+    background: #dd4c4a;
+    color: #ffffff;
+    border-radius: .04rem;
+    text-align: center;
+    font-family: 'zaozi';
+    font-weight: bolder;
+}
+
+
+/*遮罩层*/
+.letter-alert-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(40, 40, 40, 0.46);
+}
+/*确认框*/
+.letter-alert {
+    width: 3.06rem;
+    height: 1.92rem;
+    margin: 2rem auto;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: .03rem solid #000000;
+    border-radius: .04rem;
+}
+/*离开or确认消息*/
+.leave-alert, .confirm-alert {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: .45rem .34rem .4rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.leave-message, .confirm-message {
+    width: 2.35rem;
+    height: .18rem;
+    margin: 0 auto;
+    font-size: .18rem;
+    font-family: 'pingfang';
+    text-align-last: justify;
+}
+.leave-buttons, .confirm-buttons {
+    width: 2.35rem;
+    height: .32rem;
+    font-size: .17rem;
+    font-family: 'pingfang'; 
+    display: flex;
+}
+.leave-buttons {
+    justify-content: space-between;
+}
+.confirm-buttons {
+    justify-content: space-around;
+}
+.leave-sure, .leave-cancel, .confirm-sure {
+    width: 1.04rem;
+    height: .32rem;
+    line-height: .32rem;
+    border: .03rem solid #dd4c4a;
+    border-radius: .03rem;
+    background: #dd4c4a;
+    color: #000000;
+    text-align: center;
+}
+.leave-cancel {
+    background: #ffffff;
+    border: .03rem solid #000000;
 }

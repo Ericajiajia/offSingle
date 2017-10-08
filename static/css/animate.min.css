@@ -617,9 +617,13 @@
 
 .fadeInLeft {
   animation-name: fadeInLeft;
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 
+
+.fadeInLeftQiuck {
+  animation-name: fadeInLeft;
+}
 @keyframes fadeInLeftBig {
   from {
     opacity: 0;
